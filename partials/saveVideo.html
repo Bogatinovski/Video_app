@@ -1,0 +1,30 @@
+        <div class="modal-header">
+            <h3 class="modal-title">Save Video</h3>
+        </div>
+        <div class="modal-body">
+            <form>
+                <input placeholder="Enter Video Name" type="text" class="form-control mt-5" ng-model="video.name"/>
+                <input placeholder="Enter Video Start Time" type="text" class="form-control mt-5" ng-model="video.startTime"/>
+                <input placeholder="Enter Video End Time" type="text" class="form-control mt-5" ng-model="video.endTime"/>
+                
+                
+            
+                <div class="mt-10 clearfix">
+                    <label>Tags:</label>
+                    <div >
+                        <input placeholder="Enter tag name" type="text" class="form-control" ng-model="tag" ng-keyup="onKeyUp($event)"/>
+                    </div>
+                    <div class="mt-10">
+                        <div ng-repeat="tag in video.tags" class="tag-container">
+                            <span>{{tag}}</span> 
+                            <span class="glyphicon glyphicon-remove" ng-click="removeTag(tag)"></span>
+                        </div>
+                        
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
